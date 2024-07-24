@@ -1,6 +1,7 @@
 // src/DepositPage.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import logo from '../Depositpage/color.jpg';
 
 const Container = styled.div`
   width: 90%;
@@ -71,7 +72,7 @@ const AmountInput = styled.input`
   font-size: 16px;
   color: #fff;
   margin: 5px;
-   border-bottom: 1px solid #666;
+  border-bottom: 1px solid #666;
   width: calc(100% - 42px);
 `;
 
@@ -126,10 +127,16 @@ const NavLink = styled.a`
   }
 `;
 
+const StyledImage = styled.img`
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+`;
+
 function DepositPage() {
   const [selectedMethod, setSelectedMethod] = useState('WALLET');
-  const [selectedAmount, setSelectedAmount] = useState(300);
-  const [customAmount, setCustomAmount] = useState('');
+  //const [selectedAmount, setSelectedAmount] = useState(300);
+  //const [customAmount, setCustomAmount] = useState('');
   const userName = 'John Doe'; // Replace with the actual user name from your authentication logic
 
   const handleLogout = () => {
@@ -159,7 +166,7 @@ function DepositPage() {
           <MethodButton active={selectedMethod === 'DEPOSIT'} onClick={() => setSelectedMethod('DEPOSIT')}>DEPOSIT</MethodButton>
         </PaymentMethod>
 
-        <AmountInput
+        {/*<AmountInput
           type="text"
           placeholder="Enter amount"
           value={customAmount}
@@ -180,7 +187,8 @@ function DepositPage() {
               {amount}
             </AmountButton>
           ))}
-        </AmountSection>
+        </AmountSection>*/}
+        <StyledImage src={logo} alt="Logo" />
 
         <Note>
           * The Bank payment gateway offers an additional 5% bonus on First deposit.<br />
